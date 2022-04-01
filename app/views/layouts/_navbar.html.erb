@@ -8,10 +8,13 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <%= link_to("Signin", user_new_path, class:"nav-item nav-link active px-3") %>
-        <%= link_to("Users", users_index_path, class:"nav-item nav-link active px-3") %>
-        <%= link_to("Longin",login_form_path, class:"nav-item nav-link active px-3") %>
-        <%= link_to("Logout", logout_path, class:"nav-item nav-link active px-3") %>
+        <% if current_user %>
+          <%= link_to("Users", users_index_path, class:"nav-item nav-link active px-3") %>
+          <%= link_to("Logout", logout_path, class:"nav-item nav-link active px-3") %>
+        <% else %>
+          <%= link_to("Signin", user_new_path, class:"nav-item nav-link active px-3") %>
+          <%= link_to("Longin",login_form_path, class:"nav-item nav-link active px-3") %>
+        <% end %>
       </ul>
     </div>
   </div>
