@@ -1,0 +1,13 @@
+<div class="container-fluid ">
+  <div class="row justify-content-center">
+    <% if flash.notice %>
+      <div class="text-dark text-center bg-success">
+        <%= tag.h4 flash.notice, class:"pt-2 text-white" %>
+      </div>
+    <% elsif flash.alert %>
+      <div class="text-dark text-center bg-danger" >
+        <%= tag.h4 flash.alert, class:"pt-2 text-white" %>
+      </div>
+    <% end %>
+  </div>
+</div>
