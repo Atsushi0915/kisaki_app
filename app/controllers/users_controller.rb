@@ -12,10 +12,10 @@ class UsersController < ApplicationController
       flash.alert = "登録失敗しました!!"
       render :new
     end
-
   end
 
   def index
+    @users = User.all
   end
 
   def show
