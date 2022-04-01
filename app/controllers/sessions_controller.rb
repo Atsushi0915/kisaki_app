@@ -14,4 +14,12 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    if session[:user_id]
+      session[:user_id] = nil
+      flash.notice = "ログアウトしました"
+      redirect_to root_path
+    end
+  end
+
 end
