@@ -3,12 +3,16 @@
     <table class="table">
       <thead>
         <%= tag.tr %>
+          <%= tag.th "" %>
           <%= tag.th "名前" %>
           <%= tag.th "メールアドレス" %>
       <thead>
       <tbody>
         <% @users.each do |user| %>
           <%= tag.tr %>
+            <% if user.icon_image %>
+              <%= tag.td image_tag user.icon_image.url, class:"profile-img", style:"width:80px; border-radius:30%;" %>
+            <% end %>
             <%= tag.td user.name %>
             <%= tag.td user.email %>
         <% end %>

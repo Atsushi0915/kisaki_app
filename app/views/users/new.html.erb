@@ -1,11 +1,13 @@
 <div class="container mt-4" >
   <%= tag.h2 "ユーザー登録" %>
     <%= form_for(@user, url: user_create_path) do |f|%>
-      <%= f.label :name, "名前" %>
+      <%= f.label :name, "名前", class:"mt-3"%>
       <%= f.text_field :name, class:"form-control" %>
       <%= f.label :email, "メールアドレス" %>
       <%= f.email_field :email, class:"form-control" %>
-      <%= f.label :password, "パスワード" %>
+      <%= tag.div f.label :icon_image, "アイコン画像", class:"mt-2" %>
+      <%= f.file_field :icon_image, class:"my-2" %>
+      <%= tag.div f.label :password, "パスワード" %>
       <%= f.password_field :password, class:"form-control" %>
       <%= f.label :password_confirmation, "パスワード（確認用）" %>
       <%= f.password_field :password_confirmation, class:"form-control" %>
