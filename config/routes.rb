@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get  'post_new', to: 'posts#new', as: 'post_new'
   post 'post_create', to: 'posts#create', as: 'post_create'
   get  'posts_index', to: 'posts#index',  as: 'posts_index'
+  get  'post_show/:id',  to:  'posts#show',  as:'post_show'
+  get  'post_edit/:id',  to:  'posts#edit',  as:'post_edit'
   
   
 end
