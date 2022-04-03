@@ -18,6 +18,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def update
+    @post = Post.find_by(id: params[:id])
+    if @post.update(post_params)
+      flash.notice = "投稿更新しました"
+      redirect_to post_show_path(@post.id)
+    else
+      flash.alert = "更新失敗しました"
+      render :edit
+    end
+  end
+
   def index
     @post = Post.all
   end
@@ -27,6 +38,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find_by(id: params[:id])
   end
 
   private 

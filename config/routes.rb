@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get  'posts_index', to: 'posts#index',  as: 'posts_index'
   get  'post_show/:id',  to:  'posts#show',  as:'post_show'
   get  'post_edit/:id',  to:  'posts#edit',  as:'post_edit'
+  patch 'post_update/:id', to: 'posts#update',  as:'post_update'
   
   
 end
