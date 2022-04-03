@@ -1,2 +1,12 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<div class="container my-4">
+  <%= tag.h2 "新規投稿"%>
+    <%= form_for(@post, url: post_create_path) do |f| %>
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title, class:"form-control" %>
+      <%= f.label :content, "投稿内容" %>
+      <%= f.text_area :content, class:"form-control" %>
+      <%= f.label :post_image, "投稿画像" %>
+      <%= tag.div f.file_field :post_image %>
+      <%= f.submit "新規投稿", class:"btn btn-primary mt-4" %>
+    <% end %>
+</div>

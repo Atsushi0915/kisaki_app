@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   post 'login',  to:  'sessions#create',   as:  'login'
   get  'logout', to:  'sessions#destroy',  as:  'logout'
 
-
+  get  'post_new', to: 'posts#new', as: 'post_new'
+  post 'post_create', to: 'posts#create', as: 'post_create'
+  get  'posts_index', to: 'posts#index',  as: 'posts_index'
   
   
 end

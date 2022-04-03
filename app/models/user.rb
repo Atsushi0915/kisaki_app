@@ -5,5 +5,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   mount_uploader :icon_image, IconimageUploader
+  
+  has_many :posts
 
 end
