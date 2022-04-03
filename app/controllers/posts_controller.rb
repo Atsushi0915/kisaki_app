@@ -29,6 +29,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    @post.del_flag = 1
+    @post.save
+    flash.notice = "削除しました"
+    redirect_to posts_index_path
+  end
+
   def index
     @post = Post.all
   end

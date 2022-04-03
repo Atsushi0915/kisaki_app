@@ -9,10 +9,12 @@
       </thead>
       <tbody>
         <% @post.each do |post| %>
-          <%= tag.tr %>
-            <%= tag.td link_to(post.title, post_show_path(post.id)) %>
-            <%= tag.td post.content %>
-            <%= tag.td image_tag post.post_image.url, class:"profile-img", style:"width:50px; border-redius:30%;" %>
+          <% if post.del_flag != 1 %>
+            <%= tag.tr %>
+              <%= tag.td link_to(post.title, post_show_path(post.id)) %>
+              <%= tag.td post.content %>
+              <%= tag.td image_tag post.post_image.url, class:"profile-img", style:"width:50px; border-redius:30%;" %>
+          <% end %>
         <% end %>
       </tbody>
     </table>
