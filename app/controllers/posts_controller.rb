@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user, {only: [:new, :create, :update, :destroy, :index, :show, :edit]} #ログアウト中のユーザー
+
   def top
   end
 

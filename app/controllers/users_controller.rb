@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  before_action :authenticate_user, {only: [:index, :show, :eidt]} #ログアウト中のユーザー
+  before_action :forbit_login_user, {only: [:new, :create]}  #ログイン中のユーザー
+
   def new
     @user = User.new
   end

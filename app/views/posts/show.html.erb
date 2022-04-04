@@ -1,8 +1,16 @@
 <div class="container mt-4">
   <%= tag.h2 "#{@post.user.name}の投稿" %>
-    <%= @post.title %>
-    <%= @post.content %>
-    <%= image_tag @post.post_image.url, style:"width:250px;"%>
-    <%= link_to("編集", post_edit_path(@post.id), class:"btn btn-primary") %>
-    <%= link_to("削除", post_destroy_path(@post.id), class:"btn btn-primary") %>
+    <div class="row mt-4">
+      <div class="col">
+        <%= image_tag @post.post_image.url, style:"width:250px;"%>
+      </div>
+      <div class="col">
+        <%= tag.h4 @post.title %>
+        <%= tag.div @post.content %>
+        <div class="mt-4">
+          <%= link_to("編集", post_edit_path(@post.id), class:"btn btn-primary") %>
+          <%= link_to("削除", post_destroy_path(@post.id), class:"btn btn-primary") %>
+        </div>
+      </div>
+    </div>
 </div>
