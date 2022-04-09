@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'comments/new'
   root 'posts#top'
 
   get  'user_new',    to:  'users#new',    as:  'user_new'
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   get  'post_edit/:id',    to:  'posts#edit',   as:'post_edit'
   patch 'post_update/:id', to: 'posts#update',  as:'post_update'
   get  'post_destroy/:id', to: 'posts#destroy', as:'post_destroy'
+
+  post 'post_create/:id',  to: 'comments#create',  as: 'comment_create'
   
   
 end

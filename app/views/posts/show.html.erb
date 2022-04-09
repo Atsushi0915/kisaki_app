@@ -13,4 +13,24 @@
         </div>
       </div>
     </div>
+    <div>
+      <%= render 'comments/new' %>
+    </div>
+    <div class="comments mb-4">
+      <%= "コメント一覧" %>
+      
+        <% @comments.each do |comment| %>
+          <% if comment %>
+            <div class="card mt-2">
+              <div class="d-flex justify-content-left">
+                <%= image_tag comment.user.icon_image.url, class: "mx-3", style: "width:80px; border-radius:40%;" %>
+                <div class="mt-1">
+                  <%= tag.div "#{comment.user.name} のコメント" %>
+                  <%= tag.div comment.comment_text %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
+    <div>
 </div>
